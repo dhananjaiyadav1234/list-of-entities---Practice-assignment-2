@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import PostCard from "./components/PostCard";
 import './App.css'
 
 function App() {
 
-  const initialPosts = [
+  const posts = [
     {
       id: 1,
       profileImage: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg',
@@ -31,6 +32,12 @@ function App() {
 
   return (
     <>
+      <div style={{ width: "400px", margin: "auto", marginTop: "20px" }}>
+      <h2>Home Page</h2>
+      {posts.map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
+    </div>
       
     </>
   )
